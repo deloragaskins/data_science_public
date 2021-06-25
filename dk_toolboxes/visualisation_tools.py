@@ -28,18 +28,33 @@ def exploratory_plots(df,keys_to_plot, id_key,y_key):
 
 ####
 ### from disasterweets:
-def plot_bar_x(df,ylabel, feature,text_ykey):
-    # this is for plotting purpose
-#     lab=list(df[xlabel].unique())
-    index = np.arange(len(ylabel))
+class PLOT_LABEL(object):
+    def __init__(self,):
+        self.legend_labels= legend_labels
+        self.x_axis_title= x_axis_title
+        self.y_axis_title=y_axis_title
+        self.x_label=x_label
+        self.title_str=title_str
+        self.output_file_name=output_file_name
+        self.save_image=save_image
+
+
+def plot_bar_x(df,PLOT_LABEL_instance):
     df.plot.bar(color={0: "blue", 1: "cyan"},figsize=(15, 3))
-#     plt.grid()
-    plt.xlabel(feature, fontsize=15)
-    plt.ylabel('count', fontsize=15)
-    plt.xticks(index, ylabel, fontsize=15, rotation=45, horizontalalignment='right')
+
+    #axis ticks
+    index = np.arange(len(PLOT_LABEL_instance.x_label))
+    plt.xticks(index,PLOT_LABEL_instance.x_label, fontsize=15, rotation=45, horizontalalignment='right')
     plt.yticks(fontsize=15, rotation=0, horizontalalignment='right')
-    plt.title('Tweet ' + feature + ' analysis', fontsize=15)
-    plt.legend(text_ykey,prop={'size': 14})
+
+    #axis and plot titles
+    plt.xlabel(PLOT_LABEL_instance.x_axis_title, fontsize=15)
+    plt.ylabel(PLOT_LABEL_instance.y_axis_title, fontsize=15)
+    plt.title(PLOT_LABEL_instance.title_str, fontsize=15)
+
+    plt.legend(PLOT_LABEL_instance.legend_labels,prop={'size': 14})
+#     plt.grid()
 #     plt.tight_layout()
-#     plt.savefig('figures/'+feature +'_analysis.png')
+    if PLOT_LABEL_instance.save_image=='ON':
+        plt.savefig(PLOT_LABEL_instance.output_file_name)
     plt.show()
