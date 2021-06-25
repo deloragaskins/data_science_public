@@ -29,7 +29,7 @@ def exploratory_plots(df,keys_to_plot, id_key,y_key):
 ####
 ### from disasterweets:
 class PLOT_LABEL(object):
-    def __init__(self,):
+    def __init__(self,legend_labels,x_axis_title,y_axis_title,x_label,title_str,output_file_name,save_image):
         self.legend_labels= legend_labels
         self.x_axis_title= x_axis_title
         self.y_axis_title=y_axis_title
