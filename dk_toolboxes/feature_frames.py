@@ -1,5 +1,8 @@
 from sklearn.feature_extraction.text import CountVectorizer
 import textmanip_tools as dk_TM
+import sys
+sys.path.append('./')
+
 
 def ff_preproc(train_data,keywords):
 
