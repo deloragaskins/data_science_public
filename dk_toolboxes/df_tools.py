@@ -30,6 +30,7 @@ def post_proc_truth_tweet(y_predicted,X_test_pre,y_test):
     negatives=post_check.loc[post_check['truth'] == 0]
     false_pos=negatives.loc[post_check['truth'] != post_check['predicted']]
     true_neg=negatives.loc[post_check['truth'] == post_check['predicted']]
+    return true_neg,false_pos,false_neg,true_pos
 
 
 def df_remove_duplicates(df,text_key,truth_key):
