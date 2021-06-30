@@ -16,11 +16,11 @@ def make_keywords_all(df,y_key):
     keyword_str=str(keyword_list).replace("'", "").replace('nan', " ")[1:-1]
     return keyword_list,keyword_str
 
-def post_proc_truth(threshold,X_test_pre,model,X_test,y_test,corners):
+def post_proc_truth_tweet(y_predicted,X_test_pre,y_test):
     column_names=['text','predicted','truth']
     post_check=pd.DataFrame(columns=column_names)
     post_check['text']= X_test_pre['text']
-    post_check['predicted']= (model.predict(X_test)>threshold).astype(int)
+    post_check['predicted']= y_predicted
     post_check['truth']= y_test.astype('int').astype(int)
     post_check['id']= X_test_pre['id']
 
