@@ -1,11 +1,20 @@
+import pandas as pd
+import numpy as np
+
 #SECTION:EXTRACT
 ################################################################################
 
 def make_keywords(df,y_key):
+    #only diaster positive keywords
     keyword_list=df.loc[df[df.keys()[y_key]] == 1].keyword.unique()
     keyword_str=str(keyword_list).replace("'", "").replace('nan', " ")[1:-1]
     return keyword_list,keyword_str
 
+def make_keywords_all(df,y_key):
+    #all of the keywords
+    keyword_list=df.keyword.unique()
+    keyword_str=str(keyword_list).replace("'", "").replace('nan', " ")[1:-1]
+    return keyword_list,keyword_str
 
 def post_proc_truth(threshold,X_test_pre,model,X_test,y_test,corners):
     column_names=['text','predicted','truth']
