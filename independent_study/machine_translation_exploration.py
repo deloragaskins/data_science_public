@@ -29,8 +29,7 @@ print(translation)
 ##########################################################
 # translation=[{'translation_text': "Bonjour, mes amis, comment allez-vous aujourd'hui?"},
 #  {'translation_text': "Monsieur le Président, s'il vous plaît vous asseoir"},
-#  {'translation_text': 'sur, sil vous plaît sasseoir'},#https://www.machinecurve.com/index.php/2021/02/16/easy-machine-translation-with-machine-learning-and-huggingface-transformers/
-#  {'translation_text': 'chill out, bro'},
+#  {'translation_text': 'sur, sil vous plaît sasseoir'},
 #  {'translation_text': "J'ai un café"},
 #  {'translation_text': 'Suivre les règles'},
 #  {'translation_text': 'surveiller !'}]
