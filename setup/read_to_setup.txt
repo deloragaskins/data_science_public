@@ -1,0 +1,1 @@
+1) Create a user profile by copying user_sample.ini and filling in your details, this can be stored locally and not pushed to the repository
