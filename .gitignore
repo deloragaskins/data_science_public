@@ -1,0 +1,5 @@
+#ignore notes to self
+TODO*
+
+# Jupyter Notebook
+.ipynb_checkpoints
