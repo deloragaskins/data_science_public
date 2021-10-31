@@ -5,7 +5,7 @@ import os
 
 ########################################################
 parser = ConfigParser()
-parser.read(r'..\setup\user.ini')
+parser.read(f'..{os.sep}setup{os.sep}user.ini')
 database = parser.get('DBdetails', 'database')[1:-1]
 username = parser.get('DBdetails', 'usr')[1:-1]
 server = parser.get('DBdetails', 'server')[1:-1]
