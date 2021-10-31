@@ -79,7 +79,8 @@ print(decoded)
 
 # from transformers import MarianTokenizer, AutoModelForSeq2SeqLM
 #
-# text = ' '.join([str(elem) for elem in benchmark_text_en])
+# text = ' '.join([str(elem) for elem in benchmark_text_en[:2]])
+# #text=benchmark_text_en[0]
 # print(text)
 # mname = 'Helsinki-NLP/opus-mt-en-fr'
 # tokenizer = MarianTokenizer.from_pretrained(mname)
@@ -94,5 +95,6 @@ print(decoded)
 
 #next step: fine tuning
 #https://huggingface.co/course/chapter3?fw=pt
+#https://medium.com/@tskumar1320/how-to-fine-tune-pre-trained-language-translation-model-3e8a6aace9f
 
 #################################################################
